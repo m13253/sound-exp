@@ -11,6 +11,7 @@
 
 float buf[BUF_LENGTH];
 unsigned int i;
+double phase = 0;
 
 int main(int argc, char *argv[]) {
     for(i = 0; i < BUF_LENGTH; i++) {
@@ -19,7 +20,8 @@ int main(int argc, char *argv[]) {
 #else
         double freq = (double) i*(END_FREQ-START_FREQ)/(BUF_LENGTH-1)+START_FREQ;
 #endif
-        buf[i] = sin((2*M_PI*freq+1)*i/SAMPLE_RATE);
+        phase += 2*M_PI*freq/SAMPLE_RATE;
+        buf[i] = sin(phase);
     }
     {
         FILE *f = fopen("output.pcm_f32", "wb");
