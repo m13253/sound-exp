@@ -3,7 +3,7 @@ function b = sine_recover(a)
     more off;
     maxfreq = length(a)/2;
     afft = fft(a)(1:maxfreq+1);
-    power = abs(afft)/length(a);
+    power = abs(afft)*2/length(a);
     phase = arg(afft);
     b = zeros(length(afft), 1);
     for t = 0:length(a)
