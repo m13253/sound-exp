@@ -7,7 +7,7 @@
 #define START_FREQ  20
 #define END_FREQ    10000
 #define BUF_LENGTH  1000000
-//#define INTERPOLATION_LOG
+#define INTERPOLATION_LOG
 
 float buf[BUF_LENGTH];
 unsigned int i;
