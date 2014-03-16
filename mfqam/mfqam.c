@@ -6,9 +6,9 @@
 #define hibyte(x) (((unsigned char) (x)) >> 4)
 #define lobyte(x) ((x) & 0xf)
 
-const double carrier_freq[] = {500, 100, 1500, 2000, 2500, 3000, 3500, 4000};
+const double carrier_freq[] = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000};
 #define sample_rate 96000
-#define sample_per_signal 480
+#define sample_per_signal 200
 
 void write_signal(char buffer[4]) {
     unsigned int freq_i, sample_i;
