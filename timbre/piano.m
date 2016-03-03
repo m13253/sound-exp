@@ -1,9 +1,5 @@
 function a = envelope(t)
-    if t < 0.01
-        a = t/0.01;
-    else
-        a = exp(-2*log(2)*(t-0.01));
-    end
+    a = exp(-2*log(2)*t);
 end
 
 function y = osc(t, f)
@@ -22,7 +18,7 @@ end
 sr = 48000;
 volume = 0.45;
 time = 0:(1/sr):5;
-wave = arrayfun(@envelope, time) .* osc(time, 440);
+wave = envelope(time) .* osc(time, 440);
 disp(["Max pos amplitude: ", num2str(max(wave))]);
 disp(["Max neg amplitude: ", num2str(min(wave))]);
 wavwrite(volume .* wave, sr, 24, "output.wav");
