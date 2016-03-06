@@ -8,10 +8,8 @@ function y = osc(t, f)
     lfo = [1/7, 0, 1/2.75, 0, 1/11, 0, 1/5, 0, 1/4, 1/5, 1/3];
     y = 0.*t;
     for i = 1:11
-        y += harm(i)*0.75*sin(2*pi*(f*mul(i)+lfo(i))*t);
-        y += harm(i)*0.75*sin(2*pi*(f*mul(i)-lfo(i))*t);
-        y -= harm(i)*0.25*sin(2*pi*(f*mul(i)+lfo(i))*t);
-        y -= harm(i)*0.25*sin(2*pi*(f*mul(i)-lfo(i))*t);
+        y += harm(i)*0.5*sin(2*pi*(f*mul(i)+lfo(i))*t);
+        y += harm(i)*0.5*sin(2*pi*(f*mul(i)-lfo(i))*t);
     end
 end
 
