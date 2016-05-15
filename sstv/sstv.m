@@ -43,5 +43,5 @@ for row = 1:120
     wav = wav.append(1200, .00600); % hsync
 end
 
-wav = wav.append(1500, .3).wav.append(0, 1);
+wav = wav.append(1500, .3).append(0, 1);
 wav.write("sstv.wav");
