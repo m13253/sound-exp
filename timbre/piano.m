@@ -1,5 +1,5 @@
 function a = envelope(t)
-    a = exp(-2*log(2)*t);
+    a = (1/4).^t;
 end
 
 function y = osc(t, f)
