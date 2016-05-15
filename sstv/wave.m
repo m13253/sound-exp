@@ -12,7 +12,7 @@ classdef wave
         end
         function obj = append(obj, freq, dur)
             nextlen = obj.len + dur*obj.sr;
-            if freq != 0
+            if freq ~= 0
                 obj.buf = horzcat(obj.buf, sin(obj.phase + 2*pi*freq/obj.sr*(0:(floor(nextlen)-floor(obj.len)-1)))*.5);
             else
                 obj.buf = horzcat(obj.buf, zeros(1, floor(nextlen)-floor(obj.len)));
