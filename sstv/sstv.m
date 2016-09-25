@@ -1,5 +1,5 @@
 im = im2double(imread("sstv.png"));
-im = imresize(im, 120/size(im)(1));
+im = imresize(im, [160 120]);
 im = max(min(im, 1), 0);
 im = rgb2ycbcr(im);
 width = size(im)(2);
